@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script> 
-     
-      var a=prompt('输入你妈妈的名字');
-        alert(a+'死了');
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
 </head>
+
 <body>
-    
+  <p id="test"></p>
+  <script>
+    var a = prompt('输入你妈妈的名字');
+    function killmom(mom) {
+      alert(mom + '死了');
+      console.log(mom);
+    }
+    document.getElementById("test").innerHTML = killmom(a);
+   /*  function myFunction(p1, p2) {
+      return p1 * p2;
+    }
+    document.getElementById("test").innerHTML = myFunction(7, 8); */
+  </script>
 </body>
+
 </html>
