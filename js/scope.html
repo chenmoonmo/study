@@ -1,13 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <script>
+        //js作用域： 代码名字（变量）在某个范围内起作用和效果 提高程序的可靠性和降低命名冲突
+        //js作用域（es6）：全局作用域 局部作用域
+        //全局作用域：整个script标签或者是一个单独js文件内起作用
+        //var num = 10;
+        //局部作用域（函数作用域）：代码名字只在函数内部起作用和效果
+        /* function fun() {
+            var num = 20;
+        } */
+        //变量的作用域：全局变量 局部变量 同上
+        //在函数内直接赋值但没有声明的变量 是全局变量
+        //函数的形参是局部变量
+        //3.从执行效率看 全局变量和局部变量
+        //全局变量当浏览器关闭时才会销毁，比较占内存
+        //局部变量当程序执行完毕就会销毁，比较节约内存 
+        //块级作用域（es6） {} 例如if{} for{}
+        //在{}内才能调用
+        //作用域链 内部函数访问外部函数的变量 依次向外查找（就近原则）
+
+        //js 引擎运行 js 分为两步：域解析 代码执行
+        //域解析 js 引擎会把 js 里面所有的 var 和 function 提升到当前作用域的最前面
+        //域解析分为 变量域解析（变量提升）和函数域解析（函数提升）
+        //变量提升 是把当前所有的变量声明提升到当前作用域的最前面
+        /* console.log(num);
+        var num = 10;
+        //相当于执行了以下代码
+        var num;
+        console.log(num);
+        num = 10; */
+        /* fun();
+        var fun = function () {
+            console.log(233);
+        }
+        //相当于执行了以下代码
+        var fun;
+        fun();
+        fun = function () {
+            console.log(233);
+        } */
+        //函数提升 把所有的函数声明提升到当前作用于的最前面 但不调用函数（函数表达式赋值的形式不提升）
+        /* fun();
+        function fun () {
+            console.log(233);
+        }
+        //相当于执行了以下代码
+        function fun () {
+            console.log(233);
+        }
+        fun(); */
+
     </script>
 </body>
+
 </html>
