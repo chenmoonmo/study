@@ -64,22 +64,52 @@
          }
          console.log(exArr([1, 2, 3])); */
         //利用函数冒泡排序数组
-       /*  function sort(arr) {
-            for (i = 0; i <= arr.length; i++) {
-                for (j = 0; j <= arr.length - i - 1; j++) {
-                    var temp = 0;
-                    if (arr[j] > arr[j + 1]) {
-                        temp = arr[j];
-                        arr[j] = arr[j + 1];
-                        arr[j + 1] = temp;
-                    }
-                }
+        /*  function sort(arr) {
+             for (i = 0; i <= arr.length; i++) {
+                 for (j = 0; j <= arr.length - i - 1; j++) {
+                     var temp = 0;
+                     if (arr[j] > arr[j + 1]) {
+                         temp = arr[j];
+                         arr[j] = arr[j + 1];
+                         arr[j + 1] = temp;
+                     }
+                 }
+             }
+             return arr;
+         }
+         console.log(sort([6, 4, 3, 9, 1])); */
+        //利用函数判断闰年
+        /* function jug(year) {
+            var flag = false;
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                flag = true;
             }
-            return arr;
+            return flag;
         }
-        console.log(sort([6, 4, 3, 9, 1])); */
+        console.log(jug(2008)); */
+        //函数是可以相互调用的
+        //用户输入年份判断此年2月的天数 使用函数的相互调用
+        /* function jug(year) {
+            var flag = false;
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                flag = true;
+            }
+            return flag;
+        }
+        function backDay() {
+            var year = prompt('请输入年份');
+            if (jug(year)) {
+                alert(year + '是闰年，2月有29天');
+            } else {
+                alert(year + '是平年，2月有28天');
+            }
+        }
+        backDay(); */
+        //匿名函数
+        var fun=function() {
 
-
+        }
+        fun();
     </script>
 </body>
 
