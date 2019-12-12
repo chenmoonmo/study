@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //构造函数和对象的区别
+        //构造函数 泛指一大类
+        //对象是   特指某一个
+        //利用构造函数创建对象的过程称为对象的实例化
+
+        //new关键字
+        //在调用构造函数的时候 用new调用
+        //1.new 构造函数可以创建一个空的对象
+        //2.this就会指向刚才创建的空对象
+        //3.执行构造函数里的代码 给这个代码添加属性和方法
+        //4.返回这个对象
+
+        //遍历对象
+        //for in 遍历对象
+        /* for(var k in 对象) {
+
+        } */
+        
+        var obj = {
+            name: 'Simon',
+            age: 18,
+            gender: 'male',
+        }
+        for (var k in obj) {
+            console.log(k);//k 变量 输出 得到的是属性名
+            console.log(obj[k]);//obj[k] 得到的是属性值
+        }                    //for in 里面的变量 一般用 k 或者 key
+        
+        
+
+    </script>
+</body>
+
+</html>
