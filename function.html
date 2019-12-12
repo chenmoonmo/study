@@ -30,8 +30,55 @@
             }
             return max;//return返回结果 终止函数 只能返回一个值 以逗号隔开的多个值以最后一个值为准
         }              //利用return返回多个值 利用[a,b,c,d] 后遍历数组
+                       //如果函数没有return 则返回undefined
         var re = getArrMax(newArr);//利用变量接受函数结果
         console.log(re); */
+        //break continue return的区别
+        //break:结束当前的循环
+        //continue:跳出本次的循环，继续执行下次循环
+        //return:不仅可以退出循环，还可以返回return后的值，同时还可以结束当前函数体内的代码
+        /* function fn() {
+            for (var i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+        }
+        fn(1, 23, 4, 5, 6, 78, 4); */
+        /* function getMax() {
+            var max = arguments[0];
+            for (var i = 1; i < arguments.length; i++) {
+                if (arguments[i] > max) {
+                    max = arguments[i];
+                }
+            }
+            return max;
+        }
+        re=getMax(1, 23, 4, 5, 6, 78, 4);
+        console.log(re); */
+        //利用函数颠倒数组
+        /* function exArr(arr) {
+             var newArr = [];
+             for (i = arr.length - 1; i >= 0; i--) {
+                 newArr[newArr.length] = arr[i];
+             }
+             return newArr
+         }
+         console.log(exArr([1, 2, 3])); */
+        //利用函数冒泡排序数组
+       /*  function sort(arr) {
+            for (i = 0; i <= arr.length; i++) {
+                for (j = 0; j <= arr.length - i - 1; j++) {
+                    var temp = 0;
+                    if (arr[j] > arr[j + 1]) {
+                        temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        console.log(sort([6, 4, 3, 9, 1])); */
+
 
     </script>
 </body>
