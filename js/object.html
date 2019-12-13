@@ -299,7 +299,7 @@
         /* var arr1 = ['c', 'a', 'z', 'x', 'a', 'x', 'c', 'b'];
         function unique(arr) {
             var newArr = []
-            for (i = 0; i < arr.length; i++) {
+            for (var i = 0; i < arr.length; i++) {
                 if (newArr.indexOf(arr[i]) === -1) { //indexOf返回-1说明该元素在newArr中不存在
                     newArr.push(arr[i]);             //添加在新数组中
                 }
@@ -373,13 +373,13 @@
         /* var str = 'andy';
         console.log(str.charAt(3));
         //遍历字符串
-        for (i = 0; i < str.length; i++) {
+        for (var i = 0; i < str.length; i++) {
             console.log(str.charAt(i));
         }
         //返回ASCII码
         console.log(str.charCodeAt(0));
         console.log(str[0]); */
-        
+
         //判断对象中是否有该属性 对象['属性名']
         /* var o = {
             age: 18
@@ -391,8 +391,38 @@
             console.log('没有该属性');
 
         } */
-        //案例 返回字符串中出现最多的字符 并统计次数
+
+        //案例 判断一个字符串 'abcoefoxyozzopp' 中出现次数最多的字符，并统计其次数。
+        /* var str = 'abcoefoxyozzopp';
+        var o = {};
+        for (var i = 0; i < str.length; i++) {
+            var chars = str.charAt(i);
+            if (o[chars]) {
+                o[chars]++;
+            } else {
+                o[chars] = 1;
+            }
+        }
+        console.log(o);
+        //遍历对象 
+        var max = 0;
+        var ch = '';
+        for ( var k in o) {//遍历对象
+            //k得到的是属性名
+            //o[k]得到的是属性值
+            if (o[k] > max) {
+                max = o[k];
+                ch = k;
+            }
+        }
+        console.log(max);
+        console.log(ch); */
+
+        //字符串的操作方法
         
+        
+        
+
     </script>
 </body>
 
