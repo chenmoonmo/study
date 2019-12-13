@@ -207,17 +207,93 @@
         console.log(Date.now()); */
 
         //案例 倒计时案例
-        function contDown(time) {
+        /* function contDown(time) {
             var nowTime = + new Date();            //返回当前时间毫秒数
             var userTime = + new Date(time);       //返回用户输入的毫秒数
-            var times = (userTime - nowTime)/1000;        //times是剩余时间的毫秒数
+            var times = (userTime - nowTime) / 1000;        //times是剩余时间的毫秒数
             var d = parseInt(times / 60 / 60 / 24);//计算天数
+            d = d < 10 ? '0' + d : d;
             var h = parseInt(times / 60 / 60 % 24);//计算小时数
+            h = h < 10 ? '0' + h : h;
             var m = parseInt(times / 60 % 60);     //计算分数
+            m = m < 10 ? '0' + m : m;
             var s = parseInt(times % 60);          //计算秒数
-            return d+'天'+h+'时'+m+'分'+s+'秒';
+            s = s < 10 ? '0' + s : s;
+            return d + '天' + h + '时' + m + '分' + s + '秒';
         }
-        console.log(contDown('2019-12-13 12:00:00'));
+        console.log(contDown('2019-12-13 12:00:00')); */
+
+        //数组的内置对象
+        //数组对象的创建
+        //1.利用字面量 var arr = [];
+        //2.利用 new Array()   var arr = new Array(); 
+        /* var arr = new Array(2); //这里的2是数组的长度为2
+        var arr1 = new Array(2,3); //实参为2个和以上时 为在数组里添加该实参 */
+
+        //检测是否为数组
+        //1.instanceof 运算符 可以检测是否为数组
+        //2.Array.isArray(待检测数组); 
+        /* var arr = [];
+        var obj = {};
+        console.log(arr instanceof Array);
+        console.log(obj instanceof Array); */
+        //翻转数组添加检测是否为数组
+        /* function exArr(arr) {
+            //if (arr instanceof Array) { //instanceof 运算符
+                if(Array.isArray(arr)){   //Array.isArray(); array方法
+                var newArr = [];
+                for (var i = arr.length - 1; i >= 0; i--) {
+                    newArr[newArr.length] = arr[i];
+                }
+                return newArr;
+            } else {
+                return '请输入一个数组';
+            }
+        }
+        console.log(exArr([1, 2, 3])); */
+
+        //添加删除数组元素的方法
+        //1. push() 在数组末尾添加一个或多个元素
+        //2. unshift() 在数组的开头添加一个或多个数组
+        //3. pop() 可以删除数组的最后一个元素（一次只能删除一个）
+        //4. shift() 可以删除数组的第一个元素
+        /* var arr = [1,2,3];
+        arr.push(4,'push');//push()的参数是要添加的数组元素 push完毕返回的结果是新数组的长度
+        arr.unshift('unshift');//unshift()的参数是要添加的数组元素 unshift完毕返回的结果是新数组的长度
+        console.log(arr); //原来的数组也发生相应的变化
+        arr.pop(); //pop()是不跟参数的 返回值是被删除的那个元素
+        console.log(arr); 
+        arr.shift();//shift()是不跟参数的 返回值是被删除的那个元素
+        console.log(arr);   */
+
+        //案例 删除数组
+        /* var arr = [1500, 1200, 2000, 2100, 1800];
+        var newArr = [];
+        for (var i = 0; i <= arr.length; i++) {
+            if (arr[i] < 2000) {
+                newArr.push(arr[i]);
+            }
+        }
+        console.log(newArr); */
+
+        //数组排序的方法
+        //1.翻转数组 reverse()
+        //2.冒泡排序
+        /* var arr = [1500, 1200, 2000, 2100, 1800];
+        arr.sort(function(a,b){ //升序冒泡排序固定写法
+            return a - b;       //降序冒泡排序 为 return b - a
+        }) ;
+        console.log(arr); */
+
+        //返回数组元素索引号的方法 
+        //1. indexof(数组元素) 返回第一个满足条件的数组元素的索引号
+        //如果数组中没有该元素 则返回-1
+        //2. lastindexof(数组元素) 从数组末尾开始查找第一个满足条件的数组元素的索引号
+        //如果数组中没有该元素 则返回-1
+        var arr = ['blue','red','green','yellow','red']
+        
+        
+
     </script>
 </body>
 
