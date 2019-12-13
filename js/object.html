@@ -125,6 +125,7 @@
         }
         console.log(myMath.max(1, 2, 3));
         console.log(myMath.PI); */
+
         /* function getRandom(max, min) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
@@ -148,7 +149,7 @@
         }
         inputNum(); */
         //随机生产1~50内的一个数字，用户输入猜测的数值，提示猜大了或小了，继续输入，最多十次输入或猜对时结束程序
-        function getRandom(max, min) {
+        /* function getRandom(max, min) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
         function guessNum() {
@@ -166,7 +167,57 @@
             }
             alert('游戏结束');
         }
-        guessNum();
+        guessNum(); */
+
+        //Data() 日期对象 是一个构造函数 必须使用new 来调用创建
+        //1.使用Date 如果没有参数 返回当前系统的当前时间
+        /* var date = new Date();
+        console.log(date); */
+        //2.参数常用的写法 数字型 2019, 10, 01 或者是字符串型'2019-10-1 8:8:8'
+        /* var date = new Date(2019, 10 ,01);
+        var date2 = new Date('2019-10-1 8: 8: 8')
+        console.log(date);
+        console.log(date2); */
+        //3.日期格式化
+        /* var date = new Date
+        console.log(date.getFullYear());//返回当前日期的年
+        console.log(date.getMonth() + 1);//返回当前日期的月-1
+        console.log(date.getDate());//返回当前日期的日期
+        console.log(date.getDay());//返回当前日期的星期几 0-6 周日返回的是0 */
+
+        //2019年12月12日星期四
+        /* var date = new Date;
+        var year = date.getFullYear();
+        var mouth = date.getMonth();
+        var date = date.getDate();
+        var day = date.getDay();//报错
+        var arr=['星期日','星期一','星期二','星期三','星期四','星期五','星期六']
+        console.log('今天是'+year+'年'+mouth+'月'+date+'日 '+arr[day]); */
+
+        /* //获得总的毫秒数（时间戳）
+        //时间起始时间为1970年1月1号
+        //1.Date.valueOf() Date.getTime() //获取现在时间距离起始时间的毫秒数
+        var date = new Date();
+        console.log(date.valueOf());
+        console.log(date.getTime());
+        //2.简单方法
+        var date1 = +new Date();
+        console.log(date1);
+        //3.H5新增方法
+        console.log(Date.now()); */
+
+        //案例 倒计时案例
+        function contDown(time) {
+            var nowTime = + new Date();            //返回当前时间毫秒数
+            var userTime = + new Date(time);       //返回用户输入的毫秒数
+            var times = (userTime - nowTime)/1000;        //times是剩余时间的毫秒数
+            var d = parseInt(times / 60 / 60 / 24);//计算天数
+            var h = parseInt(times / 60 / 60 % 24);//计算小时数
+            var m = parseInt(times / 60 % 60);     //计算分数
+            var s = parseInt(times % 60);          //计算秒数
+            return d+'天'+h+'时'+m+'分'+s+'秒';
+        }
+        console.log(contDown('2019-12-13 12:00:00'));
     </script>
 </body>
 
