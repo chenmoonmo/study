@@ -286,14 +286,113 @@
         console.log(arr); */
 
         //返回数组元素索引号的方法 
-        //1. indexof(数组元素) 返回第一个满足条件的数组元素的索引号
+        //1. indexof(数组元素,[起始位置]) 返回第一个满足条件的数组元素的索引号
         //如果数组中没有该元素 则返回-1
-        //2. lastindexof(数组元素) 从数组末尾开始查找第一个满足条件的数组元素的索引号
+        //2. lastindexof(数组元素,[起始位置]) 从数组末尾开始查找第一个满足条件的数组元素的索引号
         //如果数组中没有该元素 则返回-1
-        var arr = ['blue','red','green','yellow','red']
-        
-        
+        /* var arr = ['blue', 'red', 'green', 'yellow', 'red'];
+        console.log(arr.indexOf('red'));     //1
+        console.log(arr.lastIndexOf('red')); //4
+        console.log(arr.indexOf('gray'));    //-1 */
 
+        //案例 数组去重
+        /* var arr1 = ['c', 'a', 'z', 'x', 'a', 'x', 'c', 'b'];
+        function unique(arr) {
+            var newArr = []
+            for (i = 0; i < arr.length; i++) {
+                if (newArr.indexOf(arr[i]) === -1) { //indexOf返回-1说明该元素在newArr中不存在
+                    newArr.push(arr[i]);             //添加在新数组中
+                }
+            }
+            return newArr;                           //返回新数组
+        }
+        console.log(unique(arr1)); */
+
+        //数组转换为字符串的方法
+        //1. toString() 以逗号为分隔符
+        //2. join(分隔符) 分隔符默认为','
+        /* var arr=[1,2,3];
+        console.log(arr.toString());
+        console.log(arr.join('|')); */
+
+        //字符串对象
+        //对象（复杂数据类型）才有属性和方法
+        //基本包装类型 就是把简单数据类型包装成了复杂数据类型
+        /* var str= 'string';
+        //相当于做了以下操作
+        //1.把简单数据类型包装成复杂数据类型
+        var temp = new String('string');
+        //2.把临时变量的值给str
+        str = temp;
+        //3.销毁临时变量
+        temp = null; */
+
+        /* //字符串的不可变
+        var str = 'blue';
+        str = 'red';     //虽然str的值变为了red 但是blue的内存空间还在
+        //所以不要对字符串进行大量的重新赋值和拼接 */
+
+        //字符串对象的方法 所有的字符串方法都不会修改字符串本身 操作完成会返回新的字符串
+        //根据字符返回位置 str.indexOf('要查找的字符',[起始的位置]) 
+
+        //案例 返回字符位置
+        //查找字符串'abcoefoxyzzopp'中所有o出现的的位置和次数
+        /* var str1 = 'abcoefoxyzzopp'
+        function findSeat(str, x) {
+            var num = 0;
+            var index = str.indexOf(x);
+            while (index !== -1) {
+                console.log(index);
+                num ++;
+                index = str.indexOf(x, [index + 1]);
+            }
+            console.log(num);
+        }
+        findSeat(str1, 'o'); */
+
+        //案例 返回数组中对应元素的位置和出现次数
+        //['red', 'blue', 'red', 'green', 'pink','red'], 求 red 出现的位置和次数
+        /* var arr = ['red', 'blue', 'red', 'green', 'pink', 'red'];
+        function findSeat(arr, x) {
+            var num = 0;
+            var index = arr.indexOf(x);
+            while (index !== -1) {
+                console.log(index);
+                num++;
+                index = arr.indexOf(x, [index + 1]);
+            }
+            console.log(num);
+
+        }
+        findSeat(arr, 'red'); */
+
+        //根据位置返回字符
+        //1. charAt(index) 根据位置返回字符
+        //2. charCodeAt(index) 返回相应索引号字符ASCII值 目的是判断用户按下了哪个键
+        //3. str[index] 返回制定位置的字符 H5新增
+        /* var str = 'andy';
+        console.log(str.charAt(3));
+        //遍历字符串
+        for (i = 0; i < str.length; i++) {
+            console.log(str.charAt(i));
+        }
+        //返回ASCII码
+        console.log(str.charCodeAt(0));
+        console.log(str[0]); */
+        
+        //判断对象中是否有该属性 对象['属性名']
+        /* var o = {
+            age: 18
+        }
+        if (o['sex']) {
+            console.log('里面有该属性');
+
+        } else {
+            console.log('没有该属性');
+
+        } */
+        //案例 返回字符串中出现最多的字符 并统计次数
+        
     </script>
 </body>
 
