@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box,
+        .box .content {
+            width: 100px;
+            height: 100px;
+        }
+
+        .box {
+            background-color: pink;
+            overflow: hidden;
+        }
+
+        .content {
+            background-color: purple;
+            position: relative;
+            transform-origin: left bottom;
+            transform: rotate(90deg);
+            transition: all 0.3s;
+        }
+
+        .box:hover .content {
+            transform: rotate(0deg);
+        }
+
+        .box,
+        .content span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box">
+        <div class="content"><span>传媒</span></div>
+    </div>
+</body>
+
+</html>
