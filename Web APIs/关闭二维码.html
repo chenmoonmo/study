@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 750px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        #box img {
+            display: block;
+            float: left;
+        }
+
+        #box img:nth-child(1) {
+            width: 16px;
+            height: 16px;
+        }
+
+        #box img:nth-child(2) {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="x.png" id="closeBtn">
+        <img src="2wm.png">
+    </div>
+    <script>
+        var closeBtn = document.getElementById("closeBtn");
+        var box = document.getElementById("box");
+        closeBtn.onclick = function () {
+            box.style.display = "none" ;
+        }
+    </script>
+</body>
+</html>

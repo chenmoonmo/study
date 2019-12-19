@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 720px;
+            margin: 50px auto 0;
+            overflow: hidden;
+        }
+        input {
+            display: inline-block;
+            float: left;
+        }
+
+        .point {
+            color: #666;
+            background: url(right.png) no-repeat left center;
+            background-size: 15px;
+            display:inline-block;
+            float: left;
+            margin:0 0 0 20px;
+            padding-left: 17px;
+        }
+        .danger {
+            color: red;
+            background: url(wrong.png) no-repeat left center;
+            background-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <input type="password">
+        <p class="point">请设置密码</p>
+    </div>
+
+    <script>
+        var password = document.querySelector("input");
+        var point = document.querySelector("p");
+        password.onblur = function () {
+            var length = this.value.length;
+            if (length < 6) {
+                point.innerHTML = " 密码过短，请输入6-16个字符 ";
+                point.className = "point danger";
+            } else if (length > 16) {
+                point.innerHTML = " 密码过长，请输入6-16个字符 ";
+                point.className = "point danger"
+            } else {
+                point.innerHTML = "";
+            }
+        }
+    </script>
+</body>
+
+</html>

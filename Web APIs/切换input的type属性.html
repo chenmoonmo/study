@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input,
+        lable {
+            float: left;
+            height: 21px;
+            padding: 3px;
+            margin-left: 4px;
+            border: 1px solid #ccc;
+            line-height: 21px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="password" value=""> <lable>👁</lable>
+    <script>
+        var passwordInput = document.querySelector("input");
+        var btn = document.querySelector("lable");
+        btn.onclick = function () {
+            if (passwordInput.type === "text") {
+                passwordInput.type = "password";
+            } else {
+                passwordInput.type = "text";
+            }
+        }
+    </script>
+</body>
+
+</html>
