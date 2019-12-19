@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: url(bg1.jpg);
+            background-size: 100%;
+        }
+
+        .container {
+            width: 778px;
+            margin: 100px auto 0;
+            background-color: #fff;
+            overflow: hidden;
+            list-style: none;
+            padding: 0 0 0 1px;
+        }
+
+        .container img {
+            width: 192px;
+            height: 128px;
+            float: left;
+            padding: 5px 1px 5px 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="container">
+        <li><img src="bg1.jpg" alt=""></li>
+        <li><img src="bg2.jpg" alt=""></li>
+        <li><img src="bg3.jpg" alt=""></li>
+        <li><img src="bg4.jpg" alt=""></li>
+    </ul>
+    <script>
+        var imgs = document.querySelectorAll("img");
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].onclick = function () {
+                console.log(this.src);
+                document.body.style.backgroundImage = 'url("' +this.src+ '")';
+            }
+        }
+    </script>
+</body>
+
+</html>
