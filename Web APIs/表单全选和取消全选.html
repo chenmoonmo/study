@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 300px;
+            margin: 100px auto 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #ccc;
+            width: 300px;
+        }
+
+        thead th {
+            background-color: skyblue;
+            font: 16px bold '微软雅黑';
+            color: #fff;
+        }
+
+        th,
+        td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+
+        td {
+            font: 14px '微软雅黑';
+        }
+
+        tbody tr:hover {
+            background-color: #ebebeb;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" name="" id="Allchose">
+                    </th>
+                    <th>商品</th>
+                    <th>价钱</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>macbook pro</td>
+                    <td>200</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>macbook pro</td>
+                    <td>200</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>macbook pro</td>
+                    <td>200</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    var Allchose = document.getElementById("Allchose");
+    var chose = document.querySelectorAll("tbody input");
+    Allchose.onclick = function () {
+        for (var i = 0; i < chose.length; i++) {
+            chose[i].checked = this.checked;
+        }
+    }
+    for (var i = 0; i < chose.length; i++) {  //第一个for给所有元素绑定事件
+        chose[i].onclick = function () { 
+            var flag = true;                  //每一次点击事件时修改flag的值 但是不能每次循环都初始化 所以写在第二个for外面
+            for ( var i = 0; i < chose.length; i++) { //第二个for判断元素的选中状态
+                if (!chose[i].checked) {       //有元素未被选中时
+                    flag = false; 
+                    break;                    //只要有一个元素未被选中 直接退出循环
+                }
+            } 
+            console.log(flag);
+            Allchose.checked = flag;
+        }
+    } 
+</script>
+
+</html>
