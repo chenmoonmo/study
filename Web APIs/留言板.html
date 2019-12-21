@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            position: relative;
+            width: 400px;
+            margin: 100px auto 0;
+        }
+
+        .container textarea {
+            width: 400PX;
+            height: 200px;
+            display: block;
+        }
+
+        /* .container input{
+            position: absolute;
+            top: 225px;
+            right: 0px;
+        } */
+        ul {
+            list-style: none;
+            width: 400px;
+            text-align: left;
+            padding: 0;
+        }
+
+        ul li {
+            height: 20px;
+            margin-top: 5px;
+            background-color: pink;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        a {
+            float: right;
+            text-decoration: none;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <input type="button" value="提交">
+        <ul>
+        </ul>
+    </div>
+    <script>
+        var con = document.querySelector(".container");
+        var text = con.children[0];
+        var btn = con.children[1];
+        var newCon = con.children[2];
+        btn.onclick = function () {
+            if (!text.value) {
+                alert("请输入内容");
+            } else {
+                var newli = document.createElement("li");
+                newli.innerHTML = text.value + "<a href='javascript:;'>删除</a>";
+                newCon.insertBefore(newli, newCon.children[0]);
+                var a = document.querySelectorAll("a");
+                for (i = 0; i < a.length; i++) {
+                    a[i].onclick = function () {
+                        newCon.removeChild(this.parentNode);
+                    }
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>
