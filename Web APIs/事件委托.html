@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+            background-color: red;
+            list-style: none;
+            padding: 10px;
+        }
+
+        li {
+            cursor: pointer;
+            background-color: green;
+            height: 30px;
+            width: 50%;
+            line-height: 30px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>弹弹弹1</li>
+        <li>弹弹弹2</li>
+        <li>弹弹弹3</li>
+        <li>弹弹弹4</li>
+        <li>弹弹弹5</li>
+    </ul>
+    <script>
+        //事件委托
+        var ul = document.querySelector("ul");
+        ul.addEventListener('click', function (e) {
+            alert(e.target.innerHTML);
+        })
+        //禁止鼠标右键菜单
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+        //禁止鼠标选中
+        document.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+        });
+    </script>
+</body>
+
+</html>
