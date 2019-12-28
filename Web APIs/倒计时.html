@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .container {
+            width: 190px;
+            background-color: #e83632;
+            display: block;
+            padding: 20px 0;
+            overflow: hidden;
+            margin: 200px auto;
+        }
+
+        .textcon span {
+            display: block;
+            color: #fff;
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        .textcon span:first-child {
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .textcon span:nth-child(2) {
+            font-size: 18px;
+            font-weight: 200;
+            color: #ddd;
+        }
+
+        .textcon span:nth-child(3) {
+            font-size: 25px;
+            margin: 30px 0;
+        }
+
+        .textcon span:nth-child(4) {
+            font-size: 14px;
+        }
+
+        .timer {
+            width: 130px;
+            margin: 20px auto 0;
+            position: relative;
+        }
+
+        .timer span {
+            position: relative;
+            display: block;
+            float: left;
+            padding: 3px 0;
+            background-color: #2f3430;
+            width: 35px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .timer span:nth-child(2) {
+            margin: 0 10px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <a class="container">
+        <div class="textcon">
+            <span>京东秒杀</span>
+            <span>FLASH DEALS</span>
+            <span>biu~</span>
+            <span>本场距离结束还剩</span>
+        </div>
+        <div class="timer">
+            <span class="hour">00</span>
+            <span class="minute">00</span>
+            <span class="second">00</span>
+        </div>
+    </a>
+    <script>
+        var hour = document.querySelector(".hour");
+        var minute = document.querySelector(".minute");
+        var second = document.querySelector(".second");
+        //计算剩余时间  
+        var inpuTime = +new Date("2019-12-29 00:00:00");
+        function countDown(time) {
+            var nowTime = +new Date();
+            var times = (inpuTime - nowTime) / 1000;
+            var h = parseInt(times / 60 / 60 % 24);
+            console.log(times);
+            h = h < 10 ? "0" + h : h;
+            hour.innerHTML = h; //替换盒子内的时间
+            var m = parseInt(times / 60 % 60);
+            m = m < 10 ? "0" + m : m;
+            minute.innerHTML = m;
+            var s = parseInt(times % 60);
+            s = s < 10 ? "0" + s : s;
+            second.innerHTML = s;
+        }
+        setInterval(countDown, 1000);
+    </script>
+</body>
+
+</html>
