@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        th,
+        td {
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            padding: 0 40px;
+            border: 1px solid #000;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background-color: #ccc;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 100px auto 0;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        var datas = [{   //学生数据用对象来存储，但学生有多个 放在数组中储存
+            name: "孙笑川",
+            subject: "抽象学",
+            score: 100
+        }, {
+            name: "周阴中",
+            subject: "大学淋语Ⅲ",
+            score: 100
+        }, {
+            name: "蔡徐坤",
+            subject: "篮球",
+            score: 0
+        }]
+        var newCon = document.querySelector("tbody");
+        for (var i = 0; i < datas.length; i++) {
+            var tr = document.createElement("tr");
+            newCon.appendChild(tr);
+            var student = datas[i];
+            for (var k in student) {
+                var td = document.createElement("td");
+                td.innerHTML = student[k];
+                tr.appendChild(td);
+            }
+            var td = document.createElement("td");
+            td.innerHTML = "<a href='javascrpt:;'>删除</a>";
+            tr.appendChild(td);
+        }
+        var btn = document.querySelectorAll("a");
+        for (var i = 0; i < btn.length; i++) {
+            btn[i].onclick = function () {
+                newCon.removeChild(this.parentNode.parentNode) ;
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
