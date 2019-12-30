@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .ad {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            line-height: 400px;
+            text-align: center;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        window.addEventListener("load", function () {
+            var ad = document.querySelector(".ad");
+            var adkiller = setTimeout(function () {
+                ad.style.display = "none";
+            }, 5000)
+            ad.addEventListener("click",function(){
+                clearTimeout(adkiller);
+            })
+        })
+    </script>
+    <div class="ad">
+        这是一个广告 我只能活5秒
+        如果你点我 我就不会死
+    </div>
+</body>
+
+</html>
