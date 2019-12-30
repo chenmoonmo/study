@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .container {
+            position: relative;
+            width: 200px;
+            margin: 100px auto 0;
+        }
+
+        .hide {
+            height: 30px;
+            line-height: 30px;
+            word-wrap: normal;
+            display: none;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            padding-left: 10px;
+            margin-bottom: 10px;
+            box-shadow: -1px 1px 2px 2px #eee;
+            font-size: 18px;
+            position: relative;
+        }
+        .hide::before {
+            position: absolute;
+            content: "";
+            width: 12px;
+            height: 12px;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            background-color: #fff;
+            transform: rotate(45deg);
+            top: 24px;
+            left: 16px;
+        }
+
+        input {
+            width: 200px;
+            height: 20px;
+            line-height: 20px;
+            outline: none;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="hide"></div>
+        <input type="text">
+    </div>
+    <script>
+        var ipt = document.querySelector("input");
+        var hide = document.querySelector(".hide");
+        ipt.addEventListener("keyup", function (e) {
+            if (this.value) {
+                hide.innerHTML = this.value;
+                hide.style.display = "block";
+            } else {
+                hide.style.display = "none"
+            }
+        })
+        ipt.addEventListener("focus", function () {
+            if(this.value) {
+                hide.style.display = "block";
+            }
+        })
+        ipt.addEventListener("blur", function() { 
+            hide.style.display ="none";
+        })
+    </script>
+</body>
+
+</html>
