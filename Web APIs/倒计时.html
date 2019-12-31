@@ -79,9 +79,9 @@
             <span>本场距离结束还剩</span>
         </div>
         <div class="timer">
-            <span class="hour">00</span>
-            <span class="minute">00</span>
-            <span class="second">00</span>
+            <span class="hour"></span>
+            <span class="minute"></span>
+            <span class="second"></span>
         </div>
     </a>
     <script>
@@ -89,7 +89,7 @@
         var minute = document.querySelector(".minute");
         var second = document.querySelector(".second");
         //计算剩余时间  
-        var inpuTime = +new Date("2019-12-29 00:00:00");
+        var inpuTime = +new Date("2019-12-30 00:00:00");
         function countDown(time) {
             var nowTime = +new Date();
             var times = (inpuTime - nowTime) / 1000;
@@ -104,6 +104,7 @@
             s = s < 10 ? "0" + s : s;
             second.innerHTML = s;
         }
+        countDown();
         setInterval(countDown, 1000);
     </script>
 </body>
