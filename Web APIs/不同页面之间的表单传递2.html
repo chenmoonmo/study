@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <span></span>
+    <button>back</button>
+    <script>
+        var span = document.querySelector("span");
+        var user = location.search.substr(1);
+        var arr = user.split("=");
+        span.innerHTML = arr[1] + "欢迎你"
+        var btn = document.querySelector("button");
+        btn.addEventListener("click",function() {
+            history.back();
+        })
+    </script>
+</body>
+</html>
