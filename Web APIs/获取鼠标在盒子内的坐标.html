@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+      div {
+          width: 400px;
+          height: 400px;
+          background-color: #8a49ff;
+          top: 100px;
+          left: 100px;
+          position: fixed;
+      }  
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        var div = document.querySelector("div");
+        div.addEventListener("mousemove", function (e) { //使用鼠标事件时 需要在函数中自定义对象名
+            var x = e.pageX - div.offsetLeft;//不是page.x 是pageX
+            var y = e.pageY - div.offsetTop;
+            console.log(x);
+            console.log(y);
+        })
+    </script>
+</body>
+</html>
