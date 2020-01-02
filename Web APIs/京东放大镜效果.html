@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .small {
+            width: 400px;
+        }
+
+        .container {
+            width: 400px;
+            position: relative;
+            top: 200px;
+            left: 200px;
+            border: 1px solid #ccc;
+            cursor: move;
+        }
+
+        .mask {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #f2ce2b;
+            opacity: .5;
+            border: 1px solid #ccc;
+            display: none;
+        }
+
+        .bigger {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            position: absolute;
+            left: 410px;
+            top: 0;
+            display: none;
+            overflow: hidden;
+            border: 1px solid #ccc;
+        }
+
+        .bigger img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <img class="small" src="big.jpg" alt="">
+        <div class="mask"></div>
+        <div class="bigger">
+            <img src="big.jpg" alt="">
+        </div>
+    </div>
+    <script>
+        var mask = document.querySelector(".mask");
+        var img = document.querySelector(".container");
+        var bigger = document.querySelector(".bigger");
+        console.log(bigger);
+        img.addEventListener("mouseover", function (e) {
+            mask.style.display = "block";
+            bigger.style.display = "block";
+        })
+        img.addEventListener("mouseout", function (e) {
+            mask.style.display = "none";
+            bigger.style.display = "none";
+        })
+        img.addEventListener("mousemove" , function(e) {
+            var x = e.pageX - img.offsetLeft - mask.offsetWidth / 2;
+            var y = e.pageY - img.offsetTop - mask.offsetWidth / 2;
+            var maskMax = img.offsetWidth - mask.offsetWidth;
+            if (x < 0) {
+                x = 0;
+            } else if (x > maskMax) {
+                x = maskMax;
+            }
+            if (y < 0){
+                y = 0;
+            } else if (y > maskMax) {
+                y = maskMax;
+            }
+            mask.style.left = x + "px";
+            mask.style.top = y + "px";
+            var bigImg = document.querySelector(".bigger img");
+            var bigMax = bigImg.offsetWidth - bigger.offsetWidth;
+            var bigX = x * bigMax / maskMax;
+            var bigY = y * bigMax / maskMax;
+            bigImg.style.left = -bigX + "px";
+            bigImg.style.top = -bigY + "px";
+        })
+
+    </script>
+</body>
+
+</html>
