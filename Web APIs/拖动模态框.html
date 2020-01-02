@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        .msg {
+            font-size: 20px;
+            font-weight: 600;
+            color: #8a74ff;
+            position: absolute;
+            z-index: 2;
+            cursor: pointer;
+            left: 50%;
+            transform: translate(-50%,0);
+            top: 40px
+        }
+
+        .login {
+            width: 500px;
+            background-color: #fff;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 0 0 80px 0;
+            font-weight: 600;
+            box-shadow: 1px 1px 5px #fff;
+            z-index: 2;
+            display: none;
+            user-select: none;
+        }
+
+        .login>span:nth-child(1) {
+            display: block;
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+        }
+
+        .login input {
+            height: 35px;
+            width: 400px;
+            margin-top: 15px;
+            border: 1px solid #ccc;
+        }
+        
+        .login button {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 100px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            outline: none;
+            cursor:pointer;
+        }
+        .title {
+            cursor: move;
+        }
+        .user {
+            padding-left: 10px;
+        }
+
+        .close {
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            border: 1px solid #eee;
+            box-shadow: 1px 1px 1px #ccc;
+            font-weight: 400;
+            font-size: 10px;
+            text-align: center;
+            border-radius: 50%;
+            display: block;
+            line-height: 30px;
+            position: absolute;
+            right: -10px;
+            top: -10px;
+            cursor:pointer;
+        }
+        
+        .shade {
+            width: 100%;
+            height: 100%;
+            background-color: #ddd;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            display: none;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <span class="msg">点击登录</span>
+    <div class="login">
+        <span class="title">登录账号</span>
+        <div class="user">
+            &nbsp&nbsp&nbsp<span>用户名:</span>
+            <input type="text" name="uname">
+        </div>
+        <div class="user">
+            <span>登陆密码:</span>
+            <input type="text" name="psword">
+        </div>
+        <button>登录会员</button>
+        <div class="close">关闭</div>
+    </div> 
+    <div class="shade"></div>
+    <script>
+        var shade = document.querySelector(".shade");
+        var login = document.querySelector(".login");
+        var title = document.querySelector(".title");
+        var close = document.querySelector(".close");
+        var msg = document.querySelector(".msg");
+        msg.addEventListener("click", function () {
+            login.style.display = "block";
+            shade.style.display = "block";
+            msg.style.cursor = "default";
+        })
+        close.addEventListener("click", function () {
+            login.style.display = "none";
+            shade.style.display = "none";
+            msg.style.cursor = "pointer";
+        })
+        title.addEventListener("mousedown", function (e) {
+            var x = e.pageX - login.offsetLeft; //translate改变元素的位置 不会改变元素的文档流 会保留元素原来的位置 所以返回的offset系列值是translate之前的值
+            var y = e.pageY - login.offsetTop;
+            function move(e) {
+                login.style.left = e.pageX - x + "px";
+                login.style.top = e.pageY - y + "px";
+            }
+            document.addEventListener("mousemove", move);
+            document.addEventListener("mouseup", function () {
+                document.removeEventListener("mousemove", move);
+            })
+        })
+    </script>
+</body>
+
+</html>
