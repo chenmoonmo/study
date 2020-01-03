@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: #51c4d3;
+            position: absolute;
+            top: 100px;
+            left: 100px
+        }
+
+        span {
+            width: 100px;
+            height: 100px;
+            background-color: #55bb8a;
+            position: absolute;
+            top: 200px;
+            left: 200px
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <button>click to move</button>
+    <div></div>
+    <span></span>
+    <script>
+        var span = document.querySelector('span');
+        var div = document.querySelector("div");
+        function animate(obj, target, time) {
+            clearInterval(obj.timer); // 运行前先清除已经在运行的定时器 避免同时多个定时器运行
+            obj.timer = setInterval(function () { //避免了声明变量 占用内存 避免混淆
+                if (obj.offsetLeft >= target) {
+                    clearInterval(obj.timer);
+                }
+                obj.style.left = obj.offsetLeft + 1 + "px";
+            }, 30);
+        }
+        animate(div,400);
+        var btn = document.querySelector("button");
+        btn.addEventListener("click", function(){
+            animate(span,600);
+        });
+    </script>
+</body>
+
+</html>
