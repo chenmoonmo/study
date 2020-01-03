@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        .sliderbar {
+            height: 200px;
+            width: 40px;
+            position: absolute;
+            right: 0;
+            top: 200px;
+            background-color: #ccc;
+            z-index: 1;
+        }
+
+        .sliderbar span {
+            background-color: #ccc;
+            height: 40px;
+            width: 40px;
+            line-height: 40px;
+            text-align: center;
+            display: block;
+            border: 1px solid #bbb;
+        }
+
+        .con {
+            height: 40px;
+            width: 150px;
+            line-height: 40px;
+            background-color: #ccc;
+            padding-left: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* 0 -80 */
+            z-index: -1;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="sliderbar">
+        <span>&lt;</span>
+        <div class="con">问题反馈</div>
+    </div>
+    <script type="text/javascript" src="animate.js"></script>
+    <script>
+        var span = document.querySelector("span");
+        var con = document.querySelector(".con");
+        var sliderbar = document.querySelector(".sliderbar");
+        span.addEventListener("mouseenter", function () {
+            animate(con, -80, function () {
+                con.style.backgroundColor = "pink";
+                span.innerHTML = ">";
+            })
+            sliderbar.addEventListener("mouseleave", function () {
+                animate(con, 0, function () {
+                    con.style.backgroundColor = "#ccc";
+                    span.innerHTML = "<";
+                })
+            })
+        }
+
+        )
+    </script>
+</body>
+
+</html>
