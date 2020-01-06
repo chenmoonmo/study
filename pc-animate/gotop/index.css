@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 720px;
+    margin: 0 auto;
+}
+.nav { 
+    height: 100px;
+    background: #22f4aa;
+    margin-bottom: 20px;
+}
+.banner {
+    height: 200px;
+    background-color: pink;
+    margin-bottom: 20px;
+}
+.content {
+    height: 1600px;
+    background-color: purple;
+}
+.side {
+    width: 50px;
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+    top: 200px;
+}
+.side a {
+    height: 60px;
+    color: #000;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    text-decoration: none;
+    line-height: 60px;
+    text-align: center;
+    display: block;
+}
+
+.side a:nth-child(4) {
+    display: none;
+}
