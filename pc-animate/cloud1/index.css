@@ -1,0 +1,42 @@
+nav {
+    width: 750px;
+    height: 40px;
+    position: relative;
+    top: 200px;
+    left: 50%;
+    background-color: #806d9e;
+    transform: translate(-50%);
+    padding: 0;
+}
+.nav {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+
+.nav li {
+    list-style: none;
+    float: left;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center; 
+    
+}
+.nav li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.cloud {
+    width: 70px;
+    height: 40px;
+    background: url(../images/cloud.png) no-repeat center;
+    background-size: 60px auto;
+    z-index: 1;
+    position: absolute;
+}
