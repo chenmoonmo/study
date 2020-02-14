@@ -44,5 +44,8 @@
 02.07 元宵节休息一天  
 02.08 学习fetch  
 02.09 学习axios  
-02.10 学习router 看剧
-
+02.10 学习router 看剧  
+02.11 学习router  
+02.12 学习es6模块化 babel  
+02.13 学习webpack  
+02.14 学习webpack
