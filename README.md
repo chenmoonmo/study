@@ -48,4 +48,6 @@
 02.11 学习router  
 02.12 学习es6模块化 babel  
 02.13 学习webpack  
-02.14 学习webpack
+02.14 学习webpack  
+02.15 学习vue-cli  
+02.16 vue项目实践
